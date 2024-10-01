@@ -75,7 +75,7 @@ th {
 
 tr {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   border-bottom: 1px solid;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }

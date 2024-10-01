@@ -27,23 +27,22 @@ const RepoList = () => {
         <div className="repository-list">
             <h1> Repositories</h1>
             <div className="repository-container">
-                {repos.length > 0 ? repos.map((repo) => (
-                    <table>
-                        <thead>
+                <table>
+                    <tbody>
+                        {repos.length > 0 ? repos.map((repo) => (
                             <tr>
-                                <div >
-                                    <th className={"repository-name"} onClick={() => handleRepoClick(repo)}>{repo.name}</th>
-                                    <th>{repo.visibility.charAt(0).toUpperCase() + repo.visibility.slice(1)} {repo.archived && "archived"}</th>
-                                    <th>{repo.language}</th>
-                                    <th>{
-                                        getDate(repo.updated_at)
-                                    }
-                                    </th>
-                                </div>
+                                <th key={repo.node_id} className={"repository-name"} onClick={() => handleRepoClick(repo)}>{repo.name}</th>
+                                <th>{repo.visibility.charAt(0).toUpperCase() + repo.visibility.slice(1)} {repo.archived && "archived"}</th>
+                                <th>{repo.language}</th>
+                                <th>{
+                                    getDate(repo.updated_at)
+                                }
+                                </th>
                             </tr>
-                        </thead>
-                    </table>
-                )) : <>Loading...</>}
+
+                        )) : <>Loading...</>}
+                    </tbody>
+                </table>
             </div>
         </div>
     )

@@ -22,9 +22,10 @@ This project is a React-based repository hub that allows users to browse a list 
 
 ## Installation
 1. **Clone the repository:**
-   ```bash
+   ```
    git clone https://github.com/Mahima10/godaddy-repo-hub.git
    cd godaddy-repo-hub
+   ```
 2. npm install
 3. npm start
 
