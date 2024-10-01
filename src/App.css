@@ -1,38 +1,203 @@
-.App {
-  text-align: center;
+:root {
+  --primary-color: #fff;
+  --secondary-color: #2B2B2B;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 10%;
+  margin-top: 2%;
+  background-color: var(--primary-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo {
+  width: 13%;
+  height: auto;
+  filter: invert(1);
+}
+
+.icon {
+  width: 3%;
+  height: auto;
+}
+
+header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 75vw;
+  height: 7vh;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.search {
+  width: 60%;
+  height: 5vh;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+table {
+  width: 100%;
+
+}
+
+th {
+  padding: 10px;
+  text-align: left;
+  width: 14rem;
+  max-width: 14rem;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+
+.repository-list {
+  width: 75vw;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.repository-container{
+  border: 1px solid;
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+tr {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.repository-name:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.repo-description {
+  border-bottom: 1px solid #ddd;
+  width: 70vw;
+}
+
+
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  cursor: pointer;
+  border: 1px solid;
+  border-radius: 3px;
+  width: 6rem;
+  height: max-content;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  margin: 10px;
+  padding: 10px;
+}
+
+/* .tag, */
+.action,
+.clone-url {
+  /* cursor: pointer; */
+  border: 1px solid;
+  border-radius: 3px;
+  width: 6rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  margin: 10px;
+  padding: 7px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.tag {
+  border: 1px solid;
+  border-radius: 6px;
+  width: max-content;
+  padding: 2px;
+  height: max-content;
+  margin: 25px;
+}
+
+.repository-details-heading {
+  width: 75vw;
+}
+
+.repository-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 5px;
+  border: 1px solid var(--secondary-color);
+  margin: 50px;
+  position: absolute;
+  transition: 0 0.3s;
+}
+
+.tooltip-text::after {
+  content: "";
+  margin: 10px;
+}
+
+.button-container {
+  display: flex;
+}
+
+.button-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.actions {
+  cursor: pointer;
+}
+
+.repository-details {
+  display: grid;
+  border: 2px solid var(--secondary-color);
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  grid-template-columns: 3fr 1fr;
+  box-sizing: border-box;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: start;
+}
+
+.no-border {
+  border: none;
+}
+
+.horizontal-divider {
+  width: 70%;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.clone-url {
+  width: max-content;
+  margin-left: -2px;
 }
