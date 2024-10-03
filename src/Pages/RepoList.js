@@ -14,6 +14,8 @@ const RepoList = () => {
                 setRepos(data)
             } catch (error) {
                 console.error("Error fetching repos", error)
+                // TODO: In case of missing repos, pick it from storage, if available then refresh
+                // the tool.
             }
         }
         fetchData()
@@ -30,12 +32,13 @@ const RepoList = () => {
                 <table>
                     <tbody>
                         {repos.length > 0 ? repos.map((repo) => (
+                            // Filter out if repo.name or someother name is not avaiable, do not show in the list.
                             <tr>
-                                <th key={repo.node_id} className={"repository-name"} onClick={() => handleRepoClick(repo)}>{repo.name}</th>
-                                <th>{repo.visibility.charAt(0).toUpperCase() + repo.visibility.slice(1)} {repo.archived && "archived"}</th>
-                                <th>{repo.language}</th>
+                                <th key={repo.node_id} className={"repository-name"} onClick={() => handleRepoClick(repo)}>{repo?.name}</th>
+                                <th>{repo?.visibility.charAt(0).toUpperCase() + repo?.visibility.slice(1)} {repo?.archived && "archived"}</th>
+                                <th>{repo?.language}</th>
                                 <th>{
-                                    getDate(repo.updated_at)
+                                    getDate(repo?.updated_at)
                                 }
                                 </th>
                             </tr>

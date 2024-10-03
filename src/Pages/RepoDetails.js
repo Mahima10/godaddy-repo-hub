@@ -14,9 +14,9 @@ const RepoDetails = () => {
     const fork = () => {
         return (
             <>
-                <FontAwesomeIcon icon={faCodeFork} />
+                <FontAwesomeIcon icon={faCodeFork} />  {/* in case icon wont available */}
                 <span>Fork</span>
-                <span>{forks_count}</span>
+                <span>{forks_count ? forks_count : 0}</span>
             </>
         )
     }
@@ -24,9 +24,9 @@ const RepoDetails = () => {
     const issues = () => {
         return (
             <>
-                <FontAwesomeIcon icon={faCircleDot} />
+                <FontAwesomeIcon icon={faCircleDot} /> {/* in case icon wont available */}
                 <span>Open</span>
-                <span>{open_issues_count}</span>
+                <span>{open_issues_count ? open_issues_count : 0}</span>
             </>
         )
     }
@@ -34,9 +34,9 @@ const RepoDetails = () => {
     const watch = () => {
         return (
             <>
-                <FontAwesomeIcon icon={faEye} />
+                <FontAwesomeIcon icon={faEye} /> {/* in case icon wont available */}
                 <span>Watch</span>
-                <span>{watchers_count}</span>
+                <span>{watchers_count ? watchers_count : 0}</span>
             </>
         )
     }
@@ -48,7 +48,7 @@ const RepoDetails = () => {
                     <h1>{full_name}</h1>
                     <div style={{ display: "flex" }}>
                         <h2>{name}</h2>
-                        <span className="tag">{visibility.charAt(0).toUpperCase() + visibility.slice(1)}{archived && `  archived`}</span>
+                        <span className="tag">{visibility?.charAt(0).toUpperCase() + visibility?.slice(1)}{archived && `  archived`}</span>
                     </div>
                     <span>{description}</span>
 
