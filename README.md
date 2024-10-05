@@ -1,4 +1,4 @@
-# GoDaddy Repo Hub
+# Repo Hub
 
 This project is a React-based repository hub that allows users to browse a list of available repositories. Each repository provides a concise overview of the repository's key details and includes a direct link for easy navigation to the actual repository.
 
